@@ -14,7 +14,7 @@ function getComputerChoice(computerOptions) { // computer randomly picks rock, p
 
 // Player selection
 
-const playerInput = "Rock"; // player inputs choice
+const playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
 const playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
     console.log("The player chose " + playerSelection);
 
