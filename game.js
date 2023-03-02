@@ -57,3 +57,5 @@ function declareWinner(winner) {
 console.log(playRound(computerSelection, playerSelection));
 console.log(winner);
 console.log(declareWinner(winner));
+
+alert(declareWinner(winner));
