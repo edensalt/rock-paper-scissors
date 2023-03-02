@@ -1,5 +1,6 @@
 // Play a round
 
+
 // Computer selection
 
 const computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
@@ -21,3 +22,23 @@ const playerSelection = playerInput.toLowerCase(); // player choice is made all 
 
 // Play a round
 
+function playRound(computerSelection, playerSelection) {
+    if ((computerSelection === "rock" && playerSelection === "scissors") ||
+        (computerSelection === "paper" && playerSelection === "rock") ||
+        (computerSelection === "scissors" && playerSelection === "paper")) {
+            console.log("Computer won");
+            return roundResult = `You lose, since ${computerSelection} beats ${playerSelection}!`; 
+        }  // three possibilities where computer wins
+    else if ((computerSelection === "scissors" && playerSelection === "rock") ||
+        (computerSelection === "rock" && playerSelection === "paper") ||
+        (computerSelection === "paper" && playerSelection === "scissors")) {
+            console.log("Player won");
+            return roundResult = `You win, since ${playerSelection} beats ${computerSelection}!`; 
+        }  // three possibilities where computer wins  
+    else {
+        console.log("Tie");
+        return roundResult = `It's a tie, you both chose ${computerSelection}!`;
+    }
+}
+
+console.log(playRound(computerSelection, playerSelection));
