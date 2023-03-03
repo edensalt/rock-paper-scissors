@@ -1,6 +1,6 @@
 // Define winners
 
-let roundWinners = [];
+const roundWinners = [];
 
 // Play 5 rounds, and stop after the 5th round
 
@@ -11,9 +11,9 @@ for (let i = 1; i < 6; i++) {
 
 // The computer selects an option: rock, paper or scissors
 
-    let computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
+    const computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
 
-    let computerSelection = getComputerChoice(computerOptions); // set computer selection
+    const computerSelection = getComputerChoice(computerOptions); // set computer selection
         // console.log("The computer chose " + computerSelection);
 
     function getComputerChoice(computerOptions) { // computer randomly picks rock, paper, or scissors
@@ -23,8 +23,8 @@ for (let i = 1; i < 6; i++) {
 
 // The player selects an option via prompt: rock, paper or scissors
 
-    let playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
-    let playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
+    const playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
+    const playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
         // console.log("The player chose " + playerSelection);
 
 // The winner is determined of the round
@@ -51,7 +51,7 @@ for (let i = 1; i < 6; i++) {
 
 // Define the winner
 
-    let winner = playRound(computerSelection, playerSelection);
+    const winner = playRound(computerSelection, playerSelection);
 
 // Add the winner to the array
 
