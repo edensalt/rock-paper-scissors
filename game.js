@@ -2,32 +2,48 @@
 
 const roundWinners = [];
 
-// Play 5 rounds, and stop after the 5th round
+    // The computer selects an option: rock, paper or scissors
 
-for (let i = 1; i < 6; i++) {
-    console.log(`It's time for round ${i}`);
+        const computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
 
-// For each round...
+        const computerSelection = getComputerChoice(computerOptions); // set computer selection
+            // console.log("The computer chose " + computerSelection);
 
-// The computer selects an option: rock, paper or scissors
+        function getComputerChoice(computerOptions) { // computer randomly picks rock, paper, or scissors
+        let index = Math.floor(Math.random() * computerOptions.length); // select a random index (option) in the array.
+        return computerOptions[index];
+    }
 
-    const computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
+    console.log(computerSelection);
 
-    const computerSelection = getComputerChoice(computerOptions); // set computer selection
-        // console.log("The computer chose " + computerSelection);
+    // OLD CODE The player selects an option via prompt: rock, paper or scissors
 
-    function getComputerChoice(computerOptions) { // computer randomly picks rock, paper, or scissors
-    let index = Math.floor(Math.random() * computerOptions.length); // select a random index (option) in the array.
-    return computerOptions[index];
-}
+        // const playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
+        // const playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
+            // console.log("The player chose " + playerSelection);
 
-// The player selects an option via prompt: rock, paper or scissors
+    // Establish event listeners for the buttons
 
-    const playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
-    const playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
-        // console.log("The player chose " + playerSelection);
+    const rockBtn = document.getElementById('rock');
+    const paperBtn = document.getElementById('paper');
+    const scissorsBtn = document.getElementById('scissors');
 
-// The winner is determined of the round
+    rockBtn.addEventListener('click', () => {
+        playerSelection = 'rock';
+        console.log(playerSelection);
+    })
+
+    paperBtn.addEventListener('click', () => {
+        playerSelection = 'paper';
+        console.log(playerSelection);
+    })
+
+    scissorsBtn.addEventListener('click', () => {
+        playerSelection = 'scissors';
+        console.log(playerSelection);
+    })
+
+    // Play a round
 
     function playRound(computerSelection, playerSelection) {
         if ((computerSelection === "rock" && playerSelection === "scissors") ||
@@ -46,56 +62,4 @@ for (let i = 1; i < 6; i++) {
             console.log(`It was a tie! Both you and the computer chose ${computerSelection}.`);
             return "tie";
         }
-        
     }
-
-// Define the winner
-
-    const winner = playRound(computerSelection, playerSelection);
-
-// Add the winner to the array
-
-roundWinners.push(winner);
-
-// Count the number of wins for the computer
-
-let computerWins = 0;
-for (let i = 0; i < roundWinners.length; i++) {
-    if (roundWinners[i] === "computer") {
-        ++computerWins
-    }
-}
-
-console.log(`The computer has won ${computerWins} times.`);
-
-// Count the number of wins for the player
-
-let playerWins = 0;
-for (let i = 0; i < roundWinners.length; i++) {
-    if (roundWinners[i] === "player") {
-        ++playerWins
-    }
-}
-
-console.log(`You have won ${playerWins} times.`);
-
-// Count the number of ties
-
-let ties = 0;
-for (let i = 0; i < roundWinners.length; i++) {
-    if (roundWinners[i] === "tie") {
-        ++ties
-    }
-}
-
-console.log(`There have been ${ties} ties.`);
-    
-}
-
-
-
-// To do:
-
-// Update the capitalization for the winning text.
-
-// Add an error so if they don't type in an acceptable selection, it asks them to retype.
