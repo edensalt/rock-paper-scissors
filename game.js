@@ -49,8 +49,6 @@ function playRound(choice) {
     const resultsContainer = document.querySelector('.result');
     const para = document.createElement('p');
 
-
-
     if (winner === 'computer') {
         para.textContent = `The computer won, since ${computerSelection} beats ${playerSelection}.`;
         resultsContainer.replaceChild(para, resultsContainer.lastChild);
@@ -122,6 +120,9 @@ function playRound(choice) {
 // Add end statement if player or computer reaches 5 wins
 
 const body = document.querySelector('.body');
+const playAgain = document.createElement('button');
+playAgain.textContent = 'Play again?';
+playAgain.addEventListener('click', () => location.reload());
 
 
 if (computerWins === 5) {
@@ -129,6 +130,7 @@ if (computerWins === 5) {
     endGameComp.textContent = 'Game over! You lose!';
 
     body.replaceWith(endGameComp);
+    endGameComp.appendChild(playAgain);
 }
 
 if (playerWins === 5) {
@@ -136,6 +138,8 @@ if (playerWins === 5) {
     endGamePlayer.textContent = 'Victory! You won!';
 
     body.replaceWith(endGamePlayer);
+    endGamePlayer.appendChild(playAgain);
+
 }
 
 }
