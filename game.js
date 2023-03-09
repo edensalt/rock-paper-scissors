@@ -120,15 +120,16 @@ function playRound(choice) {
 // Add end statement if player or computer reaches 5 wins
 
 const body = document.querySelector('.body');
+const endGameComp = document.createElement('div');
+endGameComp.textContent = 'Game over! You lose! ';
+endGameComp.setAttribute('style', 'margin: 10px');
+
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play again?';
 playAgain.addEventListener('click', () => location.reload());
 
 
 if (computerWins === 5) {
-    const endGameComp = document.createElement('div');
-    endGameComp.textContent = 'Game over! You lose!';
-
     body.replaceWith(endGameComp);
     endGameComp.appendChild(playAgain);
 }
