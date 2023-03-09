@@ -1,5 +1,5 @@
 
-function runRound(choice) {
+function playRound(choice) {
 
     // COMPUTER SELECTION
 
@@ -20,7 +20,7 @@ function runRound(choice) {
 
     // DETERMINE WINNER
 
-    function playRound(computerSelection, playerSelection) {
+    function determineWinner (computerSelection, playerSelection) {
         if ((computerSelection === "rock" && playerSelection === "scissors") ||
             (computerSelection === "paper" && playerSelection === "rock") ||
             (computerSelection === "scissors" && playerSelection === "paper")) {
@@ -39,7 +39,7 @@ function runRound(choice) {
         }
     }
 
-    const winner = playRound(computerSelection, playerSelection);
+    const winner = determineWinner(computerSelection, playerSelection);
     console.log(winner);
 
 }
@@ -47,17 +47,17 @@ function runRound(choice) {
 const rockBtn = document.getElementById('rock');
 rockBtn.addEventListener('click', function() {
     const choice = 'rock';
-    runRound(choice);
+    playRound(choice);
 });
 
 const paperBtn = document.getElementById('paper');
 paperBtn.addEventListener('click', function() {
     const choice = 'paper';
-    runRound(choice);
+    playRound(choice);
 });
 
 const scissorsBtn = document.getElementById('scissors');
 scissorsBtn.addEventListener('click', function() {
     const choice = 'scissors';
-    runRound(choice);
+    playRound(choice);
 });
