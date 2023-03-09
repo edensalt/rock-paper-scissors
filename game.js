@@ -47,11 +47,20 @@ function playRound(choice) {
     // Show winner on screen
 
     const resultsContainer = document.querySelector('.result');
-
     const para = document.createElement('p');
-    para.textContent = `${winner}!`;
 
-    resultsContainer.replaceChild(para, resultsContainer.lastChild);
+
+
+    if (winner === 'computer') {
+        para.textContent = `The computer won, since ${computerSelection} beats ${playerSelection}.`;
+        resultsContainer.replaceChild(para, resultsContainer.lastChild);
+    } else if (winner === 'player') {
+        para.textContent = `You won, since ${playerSelection} beats ${computerSelection}.`;
+        resultsContainer.replaceChild(para, resultsContainer.lastChild);  
+    } else {
+        para.textContent = `It was a tie! You both chose ${computerSelection}.`;
+        resultsContainer.replaceChild(para, resultsContainer.lastChild);
+    }
 
     //Update score
 
