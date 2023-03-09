@@ -1,4 +1,7 @@
-// The computer selects an option: rock, paper or scissors
+
+function runRound(choice) {
+
+    // COMPUTER SELECTION
 
     const computerOptions = ["rock", "paper", "scissors"];
 
@@ -9,30 +12,13 @@
         return computerOptions[index];
     }
 
-    console.log(computerSelection);
+    // PLAYER SELECTION
 
-// The player selects an option
+    const playerSelection = choice;
 
-    const rockBtn = document.getElementById('rock');
-    const paperBtn = document.getElementById('paper');
-    const scissorsBtn = document.getElementById('scissors');
+    console.log(playerSelection);
 
-    rockBtn.addEventListener('click', () => {
-        playerSelection = 'rock';
-        console.log(playerSelection);
-    })
-
-    paperBtn.addEventListener('click', () => {
-        playerSelection = 'paper';
-        console.log(playerSelection);
-    })
-
-    scissorsBtn.addEventListener('click', () => {
-        playerSelection = 'scissors';
-        console.log(playerSelection);
-    })
-
-// Determine the winner
+    // DETERMINE WINNER
 
     function playRound(computerSelection, playerSelection) {
         if ((computerSelection === "rock" && playerSelection === "scissors") ||
@@ -54,5 +40,24 @@
     }
 
     const winner = playRound(computerSelection, playerSelection);
-
     console.log(winner);
+
+}
+
+const rockBtn = document.getElementById('rock');
+rockBtn.addEventListener('click', function() {
+    const choice = 'rock';
+    runRound(choice);
+});
+
+const paperBtn = document.getElementById('paper');
+paperBtn.addEventListener('click', function() {
+    const choice = 'paper';
+    runRound(choice);
+});
+
+const scissorsBtn = document.getElementById('scissors');
+scissorsBtn.addEventListener('click', function() {
+    const choice = 'scissors';
+    runRound(choice);
+});
