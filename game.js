@@ -1,28 +1,17 @@
-// Define winners
+// The computer selects an option: rock, paper or scissors
 
-const roundWinners = [];
+    const computerOptions = ["rock", "paper", "scissors"];
 
-    // The computer selects an option: rock, paper or scissors
+    const computerSelection = getComputerChoice(computerOptions);
 
-        const computerOptions = ["rock", "paper", "scissors"]; // set options for computer selection
-
-        const computerSelection = getComputerChoice(computerOptions); // set computer selection
-            // console.log("The computer chose " + computerSelection);
-
-        function getComputerChoice(computerOptions) { // computer randomly picks rock, paper, or scissors
-        let index = Math.floor(Math.random() * computerOptions.length); // select a random index (option) in the array.
+    function getComputerChoice(computerOptions) {
+        let index = Math.floor(Math.random() * computerOptions.length);
         return computerOptions[index];
     }
 
     console.log(computerSelection);
 
-    // OLD CODE The player selects an option via prompt: rock, paper or scissors
-
-        // const playerInput = prompt("What do you choose?", "Type rock, paper, or scissors."); // player inputs choice
-        // const playerSelection = playerInput.toLowerCase(); // player choice is made all lower case
-            // console.log("The player chose " + playerSelection);
-
-    // Establish event listeners for the buttons
+// The player selects an option
 
     const rockBtn = document.getElementById('rock');
     const paperBtn = document.getElementById('paper');
@@ -43,7 +32,7 @@ const roundWinners = [];
         console.log(playerSelection);
     })
 
-    // Play a round
+// Determine the winner
 
     function playRound(computerSelection, playerSelection) {
         if ((computerSelection === "rock" && playerSelection === "scissors") ||
@@ -63,3 +52,7 @@ const roundWinners = [];
             return "tie";
         }
     }
+
+    const winner = playRound(computerSelection, playerSelection);
+
+    console.log(winner);
