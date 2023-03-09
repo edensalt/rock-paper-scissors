@@ -42,6 +42,15 @@ function playRound(choice) {
     const winner = determineWinner(computerSelection, playerSelection);
     console.log(winner);
 
+    // Show winner on screen
+
+    const resultsContainer = document.querySelector('.result');
+
+    const para = document.createElement('p');
+    para.textContent = `${winner} won!`;
+
+    resultsContainer.appendChild(para);
+
 }
 
 const rockBtn = document.getElementById('rock');
