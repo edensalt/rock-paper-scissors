@@ -79,7 +79,6 @@ function playRound(choice) {
     
     console.log(`You have won ${playerWins} times.`);
 
-
     // Count ties  
 
     let ties = 0;
@@ -90,10 +89,6 @@ function playRound(choice) {
     }
 
     console.log(`There have been ${ties} ties.`);
-
-    // Set up scoreboard
-
-
     
     // Add to scoreboard
 
@@ -114,6 +109,25 @@ function playRound(choice) {
     paraTie.textContent = ties;
 
     tieScore.replaceChild(paraTie, tieScore.lastChild);
+
+// Add end statement if player or computer reaches 5 wins
+
+const body = document.querySelector('.body');
+
+
+if (computerWins === 5) {
+    const endGameComp = document.createElement('div');
+    endGameComp.textContent = 'Game over! You lose!';
+
+    body.replaceWith(endGameComp);
+}
+
+if (playerWins === 5) {
+    const endGamePlayer = document.createElement('div');
+    endGamePlayer.textContent = 'Victory! You won!';
+
+    body.replaceWith(endGamePlayer);
+}
 
 }
 
