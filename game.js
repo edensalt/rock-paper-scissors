@@ -49,9 +49,9 @@ function playRound(choice) {
     const resultsContainer = document.querySelector('.result');
 
     const para = document.createElement('p');
-    para.textContent = `${winner} won!`;
+    para.textContent = `${winner}!`;
 
-    resultsContainer.appendChild(para);
+    resultsContainer.replaceChild(para, resultsContainer.lastChild);
 
     //Update score
 
