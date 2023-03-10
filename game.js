@@ -136,7 +136,7 @@ if (computerWins === 5) {
 
 if (playerWins === 5) {
     const endGamePlayer = document.createElement('div');
-    endGamePlayer.textContent = 'Victory! You won!';
+    endGamePlayer.textContent = 'Victory! You won! ';
 
     body.replaceWith(endGamePlayer);
     endGamePlayer.appendChild(playAgain);
