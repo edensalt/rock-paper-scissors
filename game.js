@@ -50,13 +50,13 @@ function playRound(choice) {
     const para = document.createElement('p');
 
     if (winner === 'computer') {
-        para.textContent = `The computer won, since ${computerSelection} beats ${playerSelection}.`;
+        para.textContent = ` The computer won, since ${computerSelection} beats ${playerSelection}.`;
         resultsContainer.replaceChild(para, resultsContainer.lastChild);
     } else if (winner === 'player') {
-        para.textContent = `You won, since ${playerSelection} beats ${computerSelection}.`;
+        para.textContent = ` You won, since ${playerSelection} beats ${computerSelection}.`;
         resultsContainer.replaceChild(para, resultsContainer.lastChild);  
     } else {
-        para.textContent = `It was a tie! You both chose ${computerSelection}.`;
+        para.textContent = ` It was a tie! You both chose ${computerSelection}.`;
         resultsContainer.replaceChild(para, resultsContainer.lastChild);
     }
 
@@ -100,19 +100,19 @@ function playRound(choice) {
     // Add to scoreboard
 
     const playerScore = document.querySelector('.player-wins');
-    const paraPlayer = document.createElement('p');
+    const paraPlayer = document.createElement('span');
     paraPlayer.textContent = playerWins;
 
     playerScore.replaceChild(paraPlayer, playerScore.lastChild);
 
     const computerScore = document.querySelector('.computer-wins');
-    const paraComputer = document.createElement('p');
+    const paraComputer = document.createElement('span');
     paraComputer.textContent = computerWins;
 
     computerScore.replaceChild(paraComputer, computerScore.lastChild);
 
     const tieScore = document.querySelector('.ties');
-    const paraTie = document.createElement('p');
+    const paraTie = document.createElement('span');
     paraTie.textContent = ties;
 
     tieScore.replaceChild(paraTie, tieScore.lastChild);

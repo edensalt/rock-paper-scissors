@@ -1,0 +1,7 @@
+.score,
+.result,
+.descriptor,
+.option {
+    display: inline-flex;
+    margin-right: 10px;
+}
