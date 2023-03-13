@@ -6,17 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    'blue': '#1fb6ff',
+                    'purple': '#7e5bef',
+                    'pink': '#ff49db',
+                    'orange': '#ff7849',
+                    'green': '#13ce66',
+                    'yellow': '#ffc82c',
+                    'gray-dark': '#273444',
+                    'gray': '#8492a6',
+                    'gray-light': '#d3dce6',
+                },
+                fontFamily: {
+                    sans: ['Graphik', 'sans-serif'],
+                    serif: ['Merriweather', 'serif'],
+                },
+                extend: {
+                    spacing: {
+                        '8xl': '96rem',
+                        '9xl': '128rem',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            },
+        }
+    </script>
 </head>
-<body>
-    <div class="body">
-    <h1>ROCK, PAPER, SCISSORS</h1>
+<body class="body">
+    <div class="relative flex min-h-screen flex-col justify-center bg-gray-50 py-6 sm:py-12">
+        <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-pink sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+    <h1 class="text-3xl font-bold underline text-pink">ROCK, PAPER, SCISSORS</h1>
     <h2>Human vs. Computer</h2>
     <h3>It's game time. The first player to reach 5 wins is the victor!</h3>
     <p>Make your selection:</p>
-    <div>
-        <button class="option" id="rock">ROCK</button>
-        <button class="option" id="paper">PAPER</button>
-        <button class="option" id="scissors">SCISSORS</button>
+    <div class="relative flex justify-center">
+        <button class="px-4 py-2 m-4 bg-purple/50 rounded-full drop-shadow-lg" id="rock">ROCK</button>
+        <button class="px-4 py-2 m-4 bg-orange/50 rounded-full drop-shadow-lg" id="paper">PAPER</button>
+        <button class="px-4 py-2 m-4 bg-yellow/50 rounded-full drop-shadow-lg" id="scissors">SCISSORS</button> <!--on click, blur other buttons-->
     </div> 
     <div class="result">
         <p class="descriptor">Result:</p>
@@ -32,6 +64,7 @@
         <div class="ties">
             <p class="score">Ties:</p>
         </div>
+    </div>
     </div>
 </div>
 </body>
