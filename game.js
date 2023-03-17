@@ -119,7 +119,7 @@ function playRound(choice) {
 
 // Add end statement if player or computer reaches 5 wins
 
-const body = document.querySelector('.body');
+const body = document.querySelector('body');
 const endGameComp = document.createElement('div');
 endGameComp.textContent = 'Game over! You lose! ';
 endGameComp.setAttribute('style', 'margin: 10px');
@@ -145,6 +145,7 @@ if (playerWins === 5) {
 
 }
 
+// Listen for player choice
 const rockBtn = document.getElementById('rock');
 rockBtn.addEventListener('click', function() {
     const choice = 'rock';
@@ -162,3 +163,17 @@ scissorsBtn.addEventListener('click', function() {
     const choice = 'scissors';
     playRound(choice);
 });
+
+// Event listeners for styling buttons
+
+const focusDuration = 150;
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('focus', () => {
+      setTimeout(() => {
+        button.blur();
+      }, focusDuration);
+    });
+  });
