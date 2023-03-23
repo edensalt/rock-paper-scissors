@@ -5,3 +5,8 @@
     display: inline-flex;
     margin-right: 10px;
 }
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url(fonts/quicksand/Quicksand-VariableFont_wght.ttf) format('truetype');
+}
