@@ -3,7 +3,7 @@
 .descriptor,
 .option {
     display: inline-flex;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 @font-face {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,23 +43,44 @@
         }
     </script>
 </head>
+
 <body class="bg-gradient-to-t from-blue/70 to-pink/70 flex justify-center items-center h-screen">
-    <div class="bg-white/70 px-10 py-10 shadow-xl ring-1 ring-pink rounded-lg flex flex-col justify-around items-center">
+    <div
+        class="bg-white/70 px-10 py-10 shadow-xl ring-1 ring-pink rounded-lg flex flex-col justify-around items-center">
         <h1 class="text-3xl font-bold text-pink my-2">ROCK, PAPER, SCISSORS</h1>
         <h2 class="text-2xl font-bold text-gray my-2">Human vs. Computer</h2>
         <h3 class="text-light-gray my-2">It's game time. The first player to reach 5 wins is the victor!</h3>
-        <p class="text-light-gray italic my-2">Make your selection:</p>
-        <div class="relative flex justify-center">
-            <button class="px-4 py-2 m-4 bg-purple/50 rounded-full drop-shadow-lg
-             transition-all duration-300 hover:bg-purple/70 hover:-translate-y-1 hover:font-bold hover:text-white
-              focus:bg-purple/90 focus:translate-y-0 cursor-pointer" id="rock">ROCK</button>
-            <button class="px-4 py-2 m-4 bg-orange/50 rounded-full drop-shadow-lg
-             transition-all duration-300 hover:bg-orange/70 hover:-translate-y-1 hover:font-bold hover:text-white
-              focus:bg-orange/90 focus:translate-y-0 cursor-pointer" id="paper">PAPER</button>
-            <button class="px-4 py-2 m-4 bg-yellow/50 rounded-full drop-shadow-lg
-             transition-all duration-300 hover:bg-yellow/70 hover:-translate-y-1 hover:font-bold hover:text-white
-              focus:bg-yellow/90 focus:translate-y-0 cursor-pointer" id="scissors">SCISSORS</button> <!--on click, blur other buttons-->
-        </div> 
+        <div class="flex">
+            <div class="flex-col mx-8 my-2">
+                <p class="text-light-gray italic">Make your selection:</p>
+                <div class="flex flex-col">
+                    <button
+                        class="py-2 m-4 bg-purple/50 rounded-full drop-shadow-lg transition-all duration-300 hover:bg-purple/70 hover:translate-x-1 hover:font-bold hover:text-white focus:bg-purple/90 focus:translate-y-1 cursor-pointer"
+                        id="rock">ROCK</button>
+                    <button
+                        class="py-2 m-4 bg-orange/50 rounded-full drop-shadow-lg transition-all duration-300 hover:bg-orange/70 hover:translate-x-1 hover:font-bold hover:text-white focus:bg-orange/90 focus:translate-y-1 cursor-pointer"
+                        id="paper">PAPER</button>
+                    <button
+                        class="py-2 m-4 bg-yellow/50 rounded-full drop-shadow-lg transition-all duration-300 hover:bg-yellow/70 hover:translate-x-1 hover:font-bold hover:text-white focus:bg-yellow/90 focus:translate-y-1 cursor-pointer"
+                        id="scissors">SCISSORS</button>
+                </div>
+                <!--on click, blur other buttons-->
+            </div>
+            <div class="flex-col mx-8 my-2">
+                <p class="text-light-gray italic">Computer selection</p>
+                <div class="flex flex-col">
+                    <button
+                        class="py-2 m-4 bg-purple/50 rounded-full drop-shadow-lg transition-all duration-300 cursor-not-allowed"
+                        id="comp-rock">ROCK</button>
+                    <button
+                        class="py-2 m-4 bg-orange/50 rounded-full drop-shadow-lg transition-all duration-300 cursor-not-allowed"
+                        id="comp-paper">PAPER</button>
+                    <button
+                        class="py-2 m-4 bg-yellow/50 rounded-full drop-shadow-lg transition-all duration-300 cursor-not-allowed"
+                        id="comp-scissors">SCISSORS</button>
+            </div>
+            </div>
+        </div>
         <div class="result">
             <p class="descriptor">Result:</p>
         </div>
@@ -77,4 +99,5 @@
     </div>
 </body>
 <script src="game.js"></script>
+
 </html>
