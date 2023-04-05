@@ -1,6 +1,6 @@
-# Project: <a href="https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors">Rock Paper Scissors</a>
+# Project: <a href="https://edensalt.github.io/rock-paper-scissors">Rock Paper Scissors</a>
 
-Rock Paper Scissors game vs. the computer for the Odin Project: Foundations course
+Rock Paper Scissors game vs. the computer for the <a href="https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors">Odin Project: Foundations course</a>
 
 ## Skills demonstrated
 
